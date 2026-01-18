@@ -1,47 +1,72 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Templates - Bombo Bot</title>
-    <link rel="icon" type="image/png" href="assets/bot-icon.png">
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bombo Bot — Templates</title>
+  <meta name="description" content="Available templates for Bombo Bot." />
+  <link rel="icon" type="image/png" href="assets/bot-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="brand"><a href="index.html" style="color: var(--gold); text-decoration: none;">Bombo Bot</a></div>
-            <div class="nav-links">
-                <a href="commands.html">Commands</a>
-                <a href="templates.html">Templates</a>
-            </div>
-        </nav>
+  <div class="container">
+    <nav class="navbar">
+      <div class="brand"><a href="index.html" style="color: var(--gold); text-decoration: none;">Bombo Bot</a></div>
+      <div class="nav-links">
+        <a href="commands.html">Commands</a>
+        <a href="templates.html">Templates</a>
+      </div>
+    </nav>
 
-        <header class="content-header">
-            <h1>Provisioning Templates</h1>
-            <p class="subtext">Available presets for server setup.</p>
-        </header>
+    <header class="hero" style="padding-bottom: 0;">
+      <h1>Templates</h1>
+      <p class="subtext">Bombo Bot currently supports two templates: one base server and one add-on.</p>
+    </header>
 
-        <main class="content-body">
-            <div class="card">
-                <h3>Basic Fortnite Server</h3>
-                <p>Clean streamer community layout. Channels, roles, permissions, pinned starter messages.</p>
-            </div>
-            <div class="card">
-                <h3>Scrims / Competitive Add-on</h3>
-                <p>Scrim access + match ops + teams + integrity + scrim voice + scrim staff.</p>
-            </div>
-        </main>
+    <main style="margin-top: 18px;">
+      <section class="card-grid">
+        <div class="card">
+          <h3>Basic Fortnite Server (Base)</h3>
+          <p><strong>Slug:</strong> <code>basic_fortnite_server</code></p>
+          <p>Creates the core streamer Discord: essential categories, channels, roles, permissions, and starter pins.</p>
+          <p><strong>Use:</strong> <code>/preview template:basic_fortnite_server</code> then Apply.</p>
+        </div>
 
-        <footer class="footer">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy</a>
-                ·
-                <a href="terms.html">Terms</a>
-            </div>
-            <p>© <span id="y"></span> Bombo Bot</p>
-        </footer>
-    </div>
-    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+        <div class="card">
+          <h3>Custom Games (Add-on)</h3>
+          <p><strong>Slug:</strong> <code>custom_games</code></p>
+          <p>Adds a Customs-focused layer (signups, queue flow, rules, host/mod tools, and related voice/text).</p>
+          <p><strong>Use:</strong> <code>/preview template:custom_games</code> then Apply.</p>
+        </div>
+      </section>
+
+      <section class="quick-start" style="margin-top: 18px;">
+        <div class="card">
+          <h3>Quick Start</h3>
+          <p>Recommended flow:</p>
+          <div class="code-block">
+            /templates<br/>
+            /preview template:basic_fortnite_server<br/>
+            /preset template:basic_fortnite_server<br/><br/>
+            /preview template:custom_games<br/>
+            /preset template:custom_games
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        ·
+        <a href="terms.html">Terms</a>
+      </div>
+      <p>© <span id="y"></span> Bombo Bot</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
