@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bombo Bot — Discord Server Provisioning Bot</title>
+    <meta name="description" content="Build a full streamer Discord in about 2 minutes." />
+    <link rel="icon" type="image/png" href="assets/bot-icon.png">
+    <link rel="stylesheet" href="assets/style.css">
+    <meta property="og:title" content="Bombo Bot">
+    <meta property="og:description" content="Build a full streamer Discord in about 2 minutes.">
+    <meta property="og:image" content="assets/bot-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="assets/bot-icon.png">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="brand">Bombo Bot</div>
+            <div class="nav-links">
+                <a href="/commands.html">Commands</a>
+                <a href="/templates.html">Templates</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <h1>Build a full streamer Discord in about 2 minutes.</h1>
+            <p class="subtext">
+                Discord Server Provisioning Bot. Instantly create categories, channels, roles, permissions, and pinned starter messages from a preset template.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1461608539511456011&permissions=8&integration_type=0&scope=bot+applications.commands" class="btn btn-primary" target="_blank" rel="noreferrer">Add to Server</a>
+                <a href="/commands.html" class="btn btn-secondary">See Commands</a>
+                <a href="/templates.html" class="btn btn-outline">View Presets</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="card-grid">
+                <div class="card">
+                    <h3>Provisioning Presets</h3>
+                    <p>Apply a template to build channels & roles with consistent permissions and naming.</p>
+                </div>
+                <div class="card">
+                    <h3>Preview + Safe Apply</h3>
+                    <p>Preview first. Optional wipe mode uses confirmation codes so you don’t nuke a server by accident.</p>
+                </div>
+                <div class="card">
+                    <h3>Streamer-First Layout</h3>
+                    <p>Go-live, schedule, links, merch, highlights, reports, voice, staff — clean and usable.</p>
+                </div>
+            </section>
+
+            <section class="quick-start">
+                <div class="card">
+                    <h3>Quick Start</h3>
+                    <p>After inviting the bot, run these commands:</p>
+                    <div class="code-block">
+                        /templates<br/>
+                        /preview &lt;template&gt;<br/>
+                        /provision &lt;template&gt;
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section class="support-contact">
+            <div class="card">
+                <h2>Support & Contact</h2>
+                <p>Need help setting up your server or choosing a preset? Send the details below and I’ll guide you through it.</p>
+                <div class="cta-buttons">
+                    <a href="[DISCORD_SERVER_LINK]" class="btn btn-primary" target="_blank" rel="noreferrer">Join Support Discord</a>
+                    <a href="mailto:[CONTACT_EMAIL]" class="btn btn-secondary">Email Support</a>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--muted); margin-top: 1rem;">I typically respond within 24–48 hours.</p>
+
+                <div class="beta-note">
+                    <h3 style="font-size: 1rem; color: var(--gold);">Beta Tester Access</h3>
+                    <p style="font-size: 0.9rem; color: var(--muted);">Beta testers may get priority support in exchange for screenshots + feedback.</p>
+                </div>
+
+                <div class="support-template">
+                    <h3>Support Request Template</h3>
+                    <div class="code-block" id="support-template">
+Server invite link:
+Goal (community / customs / tournaments):
+Preset (Basic / Custom Games add-on):
+Fresh server or Apply (no wipe):
+Must-keep channels/roles:
+Timezone + region:
+Anything else:
+                    </div>
+                    <button class="btn btn-outline" onclick="copySupportTemplate()">Copy Template</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="card">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Fresh server vs Apply (no wipe) — which should I choose?</button>
+                        <div class="accordion-content">
+                            <p><strong>Fresh server:</strong> Best for new, empty servers. Use the `/provision` command with the `wipe` option if you want to start completely clean (this is destructive).<br><strong>Apply (no wipe):</strong> Best for existing servers where you want to add the bot's structure without deleting your current channels and roles.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Why does Bombo Bot need Admin permissions?</button>
+                        <div class="accordion-content">
+                            <p>Bombo Bot needs Administrator permissions to create, manage, and delete channels, categories, and roles as defined in the templates. This is essential for its core provisioning functionality.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">My friend can’t use the bot commands — why?</button>
+                        <div class="accordion-content">
+                            <p>Bot commands are typically restricted to users with Administrator or specific server management permissions to prevent accidental changes. Your friend will need appropriate permissions in the server to use the bot.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Bot not showing online — what to check?</button>
+                        <div class="accordion-content">
+                            <p>If the bot is offline, check the official Discord status page for outages. If there are no Discord-wide issues, please join the support server for assistance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy</a>
+                ·
+                <a href="/terms.html">Terms</a>
+            </div>
+            <p>© <span id="y"></span> Bombo Bot</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+
+        function copySupportTemplate() {
+            const templateText = document.getElementById('support-template').innerText;
+            navigator.clipboard.writeText(templateText).then(() => {
+                alert('Support template copied to clipboard!');
+            });
+        }
+
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionContent = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (button.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                } else {
+                    accordionContent.style.maxHeight = 0;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Privacy - Bombo Bot</title>
+    <link rel="icon" type="image/png" href="assets/bot-icon.png">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="brand"><a href="/" style="color: var(--gold); text-decoration: none;">Bombo Bot</a></div>
+            <div class="nav-links">
+                <a href="/commands.html">Commands</a>
+                <a href="/templates.html">Templates</a>
+            </div>
+        </nav>
+
+        <header class="content-header">
+            <h1>Privacy Summary</h1>
+        </header>
+
+        <main class="content-body">
+            <p>Bombo Bot provisions Discord servers by creating categories, channels, and roles based on preset templates.</p>
+
+            <h3>What we collect:</h3>
+            <ul>
+                <li>Server configuration details required to provision (channel names, category names, role names, and permissions).</li>
+                <li>If operational logging is enabled, logs may include actions taken (created/updated channels/roles) and errors for debugging.</li>
+            </ul>
+
+            <h3>What we do NOT collect:</h3>
+            <ul>
+                <li>We do not read or store your private messages (DMs).</li>
+                <li>We do not sell personal data.</li>
+                <li>We do not use your data for advertising.</li>
+            </ul>
+
+            <h3>Retention:</h3>
+            <p>Operational logs (if enabled) are retained only as needed for troubleshooting and service reliability.</p>
+
+            <h3>Your control:</h3>
+            <p>Server admins can remove Bombo Bot at any time. Removing the bot stops further access and actions.</p>
+
+            <p style="margin-top: 2rem; font-style: italic; color: var(--muted);">Bombo Bot is not affiliated with, endorsed by, or sponsored by Discord, Epic Games, or Fortnite.</p>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy</a>
+                ·
+                <a href="/terms.html">Terms</a>
+            </div>
+            <p>© <span id="y"></span> Bombo Bot</p>
+        </footer>
+    </div>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

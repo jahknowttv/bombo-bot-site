@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Commands - Bombo Bot</title>
+    <link rel="icon" type="image/png" href="assets/bot-icon.png">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="brand"><a href="/" style="color: var(--gold); text-decoration: none;">Bombo Bot</a></div>
+            <div class="nav-links">
+                <a href="/commands.html">Commands</a>
+                <a href="/templates.html">Templates</a>
+            </div>
+        </nav>
+
+        <header class="content-header">
+            <h1>Bot Commands</h1>
+            <p class="subtext">Here are the primary commands for using the bot.</p>
+        </header>
+
+        <main class="content-body">
+            <div class="card">
+                <h3>/templates</h3>
+                <p>List available templates/presets.</p>
+            </div>
+            <div class="card">
+                <h3>/preview &lt;template&gt;</h3>
+                <p>Preview structure and apply via interactive buttons. Includes wipe options.</p>
+            </div>
+            <div class="card">
+                <h3>/provision &lt;template&gt;</h3>
+                <p>Quick apply (no preview).</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy</a>
+                ·
+                <a href="/terms.html">Terms</a>
+            </div>
+            <p>© <span id="y"></span> Bombo Bot</p>
+        </footer>
+    </div>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Templates - Bombo Bot</title>
+    <link rel="icon" type="image/png" href="assets/bot-icon.png">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="brand"><a href="/" style="color: var(--gold); text-decoration: none;">Bombo Bot</a></div>
+            <div class="nav-links">
+                <a href="/commands.html">Commands</a>
+                <a href="/templates.html">Templates</a>
+            </div>
+        </nav>
+
+        <header class="content-header">
+            <h1>Provisioning Templates</h1>
+            <p class="subtext">Available presets for server setup.</p>
+        </header>
+
+        <main class="content-body">
+            <div class="card">
+                <h3>Basic Fortnite Server</h3>
+                <p>Clean streamer community layout. Channels, roles, permissions, pinned starter messages.</p>
+            </div>
+            <div class="card">
+                <h3>Scrims / Competitive Add-on</h3>
+                <p>Scrim access + match ops + teams + integrity + scrim voice + scrim staff.</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy</a>
+                ·
+                <a href="/terms.html">Terms</a>
+            </div>
+            <p>© <span id="y"></span> Bombo Bot</p>
+        </footer>
+    </div>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
