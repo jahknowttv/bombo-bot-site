@@ -345,3 +345,38 @@ body {
     padding: 1rem 0;
 
 }
+
+/* ===== Beta Notice Banner ===== */
+.beta-banner{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(245, 158, 11, 0.20); /* amber tint */
+  border-bottom: 1px solid rgba(245, 158, 11, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.beta-banner .beta-inner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 14px;
+  color: #111;
+}
+.beta-banner strong{
+  display: block;
+  font-size: 14px;
+  letter-spacing: .2px;
+  margin-bottom: 4px;
+  color: #111;
+}
+.beta-banner p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: rgba(17,17,17,.92);
+}
+.beta-banner code{
+  background: rgba(17,17,17,.08);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
