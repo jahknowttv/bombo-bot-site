@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta name="theme-color" content="#2C1810" />
+  <meta property="og:title" content="Tamworth Bakery" />
+  <meta property="og:description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta property="og:type" content="website" />
+  <title>Menus — Tamworth Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <style>
+    /* Menu page extras */
+    .menu-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 64px;
+    }
+    .menu-cat-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .menu-cat-header {
+      padding: 20px 24px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-cat-icon { font-size: 1.4rem; }
+    .menu-cat-name {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    .menu-cat-items {
+      padding: 16px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .menu-cat-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.9rem;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .menu-cat-item:last-child { border-bottom: none; }
+    .menu-cat-item-name { flex: 1; }
+    .menu-cat-item-note { font-size: 0.78rem; color: var(--color-text-muted); font-style: italic; }
+    .menu-cat-item-price { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+
+    .bun-schedule {
+      background: var(--color-primary);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      color: var(--color-white);
+      margin-bottom: 64px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .bun-schedule-heading {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--color-accent-light);
+    }
+    .bun-schedule-sub { font-size: 0.9rem; color: rgba(255,255,255,.6); line-height: 1.65; }
+    .bun-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,.06);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      border: 1px solid rgba(255,255,255,.08);
+      transition: var(--transition);
+    }
+    .bun-row:last-child { margin-bottom: 0; }
+    .bun-row:hover { background: rgba(200,134,90,.15); }
+    .bun-day {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent-light);
+      min-width: 130px;
+    }
+    .bun-name {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-white);
+    }
+
+    @media (max-width: 1024px) {
+      .menu-page-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .menu-page-grid { grid-template-columns: 1fr; }
+      .bun-schedule { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
+    }
+  </style>
+
+</head>
+<body>
+
+    <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tamworth<span>.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         class="nav-link ">Home</a></li>
+        <li><a href="menus.html"         class="nav-link active">Menus</a></li>
+        <li><a href="reservations.html"  class="nav-link ">Reservations</a></li>
+        <li><a href="about.html"         class="nav-link ">About</a></li>
+        <li><a href="contact.html"       class="nav-link ">Contact</a></li>
+        <li><a href="reservations.html"  class="nav-link nav-cta">Reserve a Table</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  
+
+  <header class="page-header">
+    <div class="container page-header-inner">
+      <span class="section-label">What We Serve</span>
+      <h1 class="page-header-title">Our Menus</h1>
+      <p class="page-header-sub">Fresh, handcrafted, and made with love — every single day.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <!-- Bun Schedule -->
+        <div class="bun-schedule fade-up">
+          <div>
+            <p class="section-label" style="color:var(--color-accent-light)">Daily Rotation</p>
+            <h2 class="bun-schedule-heading">Specialty Bun Schedule</h2>
+            <p class="bun-schedule-sub">Our bakers craft a different signature bun each day. Check in to see what's fresh — these go fast!</p>
+          </div>
+          <div>
+            
+            <div class="bun-row">
+              <span class="bun-day">Tue &amp; Wed</span>
+              <span class="bun-name">Why Knots</span>
+            </div>
+            
+            <div class="bun-row">
+              <span class="bun-day">Thursday</span>
+              <span class="bun-name">Maple Pecan Sticky Buns</span>
+            </div>
+            
+            <div class="bun-row">
+              <span class="bun-day">Fri &amp; Sat</span>
+              <span class="bun-name">Cardamom Cream Buns</span>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Category Cards -->
+        <div class="fade-up" style="text-align:center;margin-bottom:40px">
+          <span class="section-label">Full Menu</span>
+          <h2 class="section-title">Everything We Offer</h2>
+        </div>
+
+        <div class="menu-page-grid fade-up delay-1">
+          
+          <div class="menu-cat-card">
+            <div class="menu-cat-header">
+              <span class="menu-cat-icon">☕</span>
+              <span class="menu-cat-name">Espresso Bar</span>
+            </div>
+            <div class="menu-cat-items">
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Espresso</span>
+                <span class="menu-cat-item-note">Single or double</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Americano</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Cappuccino</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Latte</span>
+                <span class="menu-cat-item-note">Hot or iced</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Cortado</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Mocha</span>
+                
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="menu-cat-card">
+            <div class="menu-cat-header">
+              <span class="menu-cat-icon">🧊</span>
+              <span class="menu-cat-name">Coffee &amp; Cold Brew</span>
+            </div>
+            <div class="menu-cat-items">
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Drip Coffee</span>
+                <span class="menu-cat-item-note">House blend</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Iced Coffee</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Iced Latte</span>
+                
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="menu-cat-card">
+            <div class="menu-cat-header">
+              <span class="menu-cat-icon">🍵</span>
+              <span class="menu-cat-name">Tea &amp; Specialty</span>
+            </div>
+            <div class="menu-cat-items">
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Hot Tea</span>
+                <span class="menu-cat-item-note">Selection of blends</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Iced Black Tea</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Thai Tea</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">House Made Chai Latte</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Hot Chocolate</span>
+                <span class="menu-cat-item-note">Rich &amp; creamy</span>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="menu-cat-card">
+            <div class="menu-cat-header">
+              <span class="menu-cat-icon">🥐</span>
+              <span class="menu-cat-name">Fresh Pastries</span>
+            </div>
+            <div class="menu-cat-items">
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Daily Specialty Bun</span>
+                <span class="menu-cat-item-note">Rotating schedule</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Seasonal Scones</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Muffins</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Croissants</span>
+                
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Cookies</span>
+                
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="menu-cat-card">
+            <div class="menu-cat-header">
+              <span class="menu-cat-icon">🥪</span>
+              <span class="menu-cat-name">Savory Lunch</span>
+            </div>
+            <div class="menu-cat-items">
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Daily Sandwiches</span>
+                <span class="menu-cat-item-note">Made to order</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Seasonal Soups</span>
+                <span class="menu-cat-item-note">Chef&#39;s selection</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Quiche</span>
+                <span class="menu-cat-item-note">While they last</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Savory Scones</span>
+                
+                
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="menu-cat-card">
+            <div class="menu-cat-header">
+              <span class="menu-cat-icon">🛒</span>
+              <span class="menu-cat-name">Local &amp; Grocery</span>
+            </div>
+            <div class="menu-cat-items">
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Local Eggs</span>
+                <span class="menu-cat-item-note">From NH farms</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">Small Groceries</span>
+                <span class="menu-cat-item-note">Varies by season</span>
+                
+              </div>
+              
+              <div class="menu-cat-item">
+                <span class="menu-cat-item-name">House-Made Jams</span>
+                
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Evening note -->
+        <div style="background:var(--color-bg-warm);border-radius:var(--radius-md);padding:36px 40px;display:flex;align-items:center;gap:24px" class="fade-up">
+          <div style="font-size:2.2rem">🌙</div>
+          <div>
+            <h3 style="font-family:var(--font-serif);font-size:1.25rem;color:var(--color-primary);margin-bottom:8px">Evening Dining — Thu &amp; Fri, 5–9 PM</h3>
+            <p style="font-size:0.9rem;color:var(--color-text-muted);line-height:1.7">Join us Thursday and Friday evenings for dinner, snacks, and drinks — including alcoholic beverages and live music on select nights. Evening menu changes seasonally; ask your server for tonight's offerings.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ── CTA ── -->
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <span class="section-label">Join Us</span>
+      <h2 class="cta-banner-title">Hungry? We're Open.</h2>
+      <p class="cta-banner-sub">Walk in or reserve a table — we'd love to feed you something wonderful.</p>
+      <div class="cta-actions">
+        <a href="reservations.html" class="btn btn-primary">Make a Reservation</a>
+        <a href="contact.html"      class="btn btn-light">Find Us</a>
+      </div>
+    </div>
+  </section>
+
+
+
+    <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Tamworth<span>.</span></div>
+          <p class="footer-tagline"> cozy bakery and café on Main Street, serving the Tamworth community with fresh baked goods, espresso, and warm hospitality.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html"       class="footer-link">Home</a></li>
+            <li><a href="menus.html"       class="footer-link">Menus</a></li>
+            <li><a href="reservations.html" class="footer-link">Reservations</a></li>
+            <li><a href="about.html"       class="footer-link">About Us</a></li>
+            <li><a href="contact.html"     class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Hours</p>
+          <ul class="footer-hours-list">
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Tuesday – Saturday</span>
+              <span class="footer-hours-time">8:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Sunday</span>
+              <span class="footer-hours-time">10:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Thursday &amp; Friday</span>
+              <span class="footer-hours-time">5:00 PM – 9:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Monday</span>
+              <span class="footer-hours-time">Closed</span>
+            </li>
+            
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="tel:" class="footer-link">22222222222</a></li>
+            <li><a href="mailto:info@tamworthbakery.us" class="footer-link">info@tamworthbakery.us</a></li>
+            <li><span class="footer-link" style="cursor:default">77 Main Street</span></li>
+            <li><span class="footer-link" style="cursor:default">Tamworth, NH 03886</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2024 Tamworth Bakery. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

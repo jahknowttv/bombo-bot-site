@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta name="theme-color" content="#2C1810" />
+  <meta property="og:title" content="Tamworth Bakery" />
+  <meta property="og:description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta property="og:type" content="website" />
+  <title>About Us — Tamworth Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <style>
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+    .value-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      border: 1px solid var(--color-border);
+      text-align: center;
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-accent);
+    }
+    .value-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+    .value-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+    .value-desc {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .story-img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 500px;
+      box-shadow: var(--shadow-lg);
+    }
+    .story-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .cert-bar {
+      background: var(--color-bg-warm);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .cert-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .cert-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .cert-badge {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: var(--shadow-md);
+    }
+    .cert-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      text-align: center;
+      max-width: 100px;
+    }
+
+    @media (max-width: 1024px) {
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .story-layout { grid-template-columns: 1fr; gap: 40px; }
+      .story-img { height: 360px; }
+    }
+    @media (max-width: 600px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .cert-grid { gap: 28px; }
+    }
+  </style>
+
+</head>
+<body>
+
+    <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tamworth<span>.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         class="nav-link ">Home</a></li>
+        <li><a href="menus.html"         class="nav-link ">Menus</a></li>
+        <li><a href="reservations.html"  class="nav-link ">Reservations</a></li>
+        <li><a href="about.html"         class="nav-link active">About</a></li>
+        <li><a href="contact.html"       class="nav-link ">Contact</a></li>
+        <li><a href="reservations.html"  class="nav-link nav-cta">Reserve a Table</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  
+
+  <header class="page-header">
+    <div class="container page-header-inner">
+      <span class="section-label">Who We Are</span>
+      <h1 class="page-header-title">About Tamworth Bakery</h1>
+      <p class="page-header-sub">A community gathering place on the Swift River since we opened our doors.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Story Section -->
+    <section class="section">
+      <div class="container">
+        <div class="story-layout">
+          <div class="story-img fade-up">
+            <img
+              src="images/about_hero.jpg"
+              alt="Inside Tamworth Bakery — warm, welcoming atmosphere"
+              loading="lazy"
+            />
+          </div>
+          <div class="fade-up delay-2">
+            <span class="section-label">Our Story</span>
+            <h2 class="section-title">More Than a Bakery,<br>It&#39;s a Meeting Place</h2>
+            
+            <p style="font-size:1rem;color:var(--color-text-muted);line-height:1.8;margin-bottom:20px">
+              Nestled at 77 Main Street along the banks of the Swift River, Tamworth Bakery was born from a simple belief: that great food, made honestly, brings people together.
+            </p>
+            
+            <p style="font-size:1rem;color:var(--color-text-muted);line-height:1.8;margin-bottom:20px">
+              Every morning our bakers are up before dawn, shaping doughs and pulling trays so that when you walk through our door, everything is as fresh as the New Hampshire air outside. We source our eggs from local farms, brew our espresso with care, and rotate our specialty buns so there’s always something new to discover.
+            </p>
+            
+            <p style="font-size:1rem;color:var(--color-text-muted);line-height:1.8;margin-bottom:32px">
+              On Thursday and Friday evenings we transform into a cozy dinner spot — snacks, seasonal dishes, drinks (including local beers and wines), and live music filling the room. It’s the Tamworth community’s living room, and you’re always welcome.
+            </p>
+            
+            <div style="display:flex;gap:40px">
+              
+              <div>
+                <p style="font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--color-accent);line-height:1">6</p>
+                <p style="font-size:0.8rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600">Days Open</p>
+              </div>
+              
+              <div>
+                <p style="font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--color-accent);line-height:1">100%</p>
+                <p style="font-size:0.8rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600">Made From Scratch</p>
+              </div>
+              
+              <div>
+                <p style="font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--color-accent);line-height:1">NH</p>
+                <p style="font-size:0.8rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600">Local Sourcing</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section" style="background:var(--color-bg-warm);padding-top:0">
+      <div class="container">
+        <div style="text-align:center" class="fade-up">
+          <span class="section-label">What We Stand For</span>
+          <h2 class="section-title">Our Values</h2>
+        </div>
+        <div class="values-grid">
+          
+          <div class="value-card fade-up delay-1">
+            <div class="value-icon">🌾</div>
+            <h3 class="value-title">Scratch-Made Always</h3>
+            <p class="value-desc">No shortcuts. Every bun, scone, and sandwich starts with quality ingredients and hands-on care every single morning.</p>
+          </div>
+          
+          <div class="value-card fade-up delay-2">
+            <div class="value-icon">🤝</div>
+            <h3 class="value-title">Community First</h3>
+            <p class="value-desc">We’re more than a café — we’re a gathering place for neighbours, families, and friends who call Tamworth home.</p>
+          </div>
+          
+          <div class="value-card fade-up delay-3">
+            <div class="value-icon">🌍</div>
+            <h3 class="value-title">Local &amp; Sustainable</h3>
+            <p class="value-desc">We partner with local NH farmers and suppliers to keep our ingredients fresh, ethical, and close to home.</p>
+          </div>
+          
+          <div class="value-card fade-up delay-1">
+            <div class="value-icon">🎵</div>
+            <h3 class="value-title">Culture &amp; Creativity</h3>
+            <p class="value-desc">Live music, rotating menus, seasonal specials — we keep things alive and celebrate the creative spirit of our town.</p>
+          </div>
+          
+          <div class="value-card fade-up delay-2">
+            <div class="value-icon">♿</div>
+            <h3 class="value-title">Welcoming to All</h3>
+            <p class="value-desc">Everyone has a seat at our table. We strive to make our space accessible, inclusive, and genuinely warm.</p>
+          </div>
+          
+          <div class="value-card fade-up delay-3">
+            <div class="value-icon">✨</div>
+            <h3 class="value-title">Consistency &amp; Craft</h3>
+            <p class="value-desc">Whether it’s your first visit or your hundredth, expect the same quality, the same care, and the same smile at the counter.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications / Trust -->
+    <div class="cert-bar">
+      <div class="container">
+        <span class="section-label">Trusted In Our Community</span>
+        <h2 class="section-title" style="margin-bottom:0">Quality You Can Count On</h2>
+        <div class="cert-grid fade-up">
+          
+          <div class="cert-item">
+            <div class="cert-badge">🎖️</div>
+            <span class="cert-name">NH Food Safe Certified</span>
+          </div>
+          
+          <div class="cert-item">
+            <div class="cert-badge">🌿</div>
+            <span class="cert-name">Local Farm Partners</span>
+          </div>
+          
+          <div class="cert-item">
+            <div class="cert-badge">⭐</div>
+            <span class="cert-name">Community Favourite</span>
+          </div>
+          
+          <div class="cert-item">
+            <div class="cert-badge">🍞</div>
+            <span class="cert-name">Artisan Bakers</span>
+          </div>
+          
+          <div class="cert-item">
+            <div class="cert-badge">🌎</div>
+            <span class="cert-name">Sustainable Practices</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Location Feature -->
+    <section class="section">
+      <div class="container" style="text-align:center">
+        <span class="section-label">Find Us</span>
+        <h2 class="section-title">In the Heart of Tamworth</h2>
+        <p class="section-subtitle" style="margin:0 auto 40px">
+          We're located at 77 Main Street, right along the Swift River in downtown Tamworth, NH — easy to find, hard to leave.
+        </p>
+        <a href="contact.html" class="btn btn-primary">Get Directions</a>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <span class="section-label">Come Say Hello</span>
+      <h2 class="cta-banner-title">We'd Love to Meet You</h2>
+      <p class="cta-banner-sub">Stop in any day Tue–Sun, or reserve a spot for evening dining.</p>
+      <div class="cta-actions">
+        <a href="reservations.html" class="btn btn-primary">Reserve a Table</a>
+        <a href="contact.html"      class="btn btn-light">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+
+
+    <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Tamworth<span>.</span></div>
+          <p class="footer-tagline"> cozy bakery and café on Main Street, serving the Tamworth community with fresh baked goods, espresso, and warm hospitality.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html"       class="footer-link">Home</a></li>
+            <li><a href="menus.html"       class="footer-link">Menus</a></li>
+            <li><a href="reservations.html" class="footer-link">Reservations</a></li>
+            <li><a href="about.html"       class="footer-link">About Us</a></li>
+            <li><a href="contact.html"     class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Hours</p>
+          <ul class="footer-hours-list">
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Tuesday – Saturday</span>
+              <span class="footer-hours-time">8:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Sunday</span>
+              <span class="footer-hours-time">10:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Thursday &amp; Friday</span>
+              <span class="footer-hours-time">5:00 PM – 9:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Monday</span>
+              <span class="footer-hours-time">Closed</span>
+            </li>
+            
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="tel:" class="footer-link">22222222222</a></li>
+            <li><a href="mailto:info@tamworthbakery.us" class="footer-link">info@tamworthbakery.us</a></li>
+            <li><span class="footer-link" style="cursor:default">77 Main Street</span></li>
+            <li><span class="footer-link" style="cursor:default">Tamworth, NH 03886</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2024 Tamworth Bakery. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

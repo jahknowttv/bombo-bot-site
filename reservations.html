@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta name="theme-color" content="#2C1810" />
+  <meta property="og:title" content="Tamworth Bakery" />
+  <meta property="og:description" content="Fresh baked goods, espresso, and savory lunch in the heart of Tamworth, NH. Open Tue–Sun." />
+  <meta property="og:type" content="website" />
+  <title>Reservations — Tamworth Bakery</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+</head>
+<body>
+
+    <nav class="nav scrolled" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Tamworth<span>.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html"         class="nav-link ">Home</a></li>
+        <li><a href="menus.html"         class="nav-link ">Menus</a></li>
+        <li><a href="reservations.html"  class="nav-link active">Reservations</a></li>
+        <li><a href="about.html"         class="nav-link ">About</a></li>
+        <li><a href="contact.html"       class="nav-link ">Contact</a></li>
+        <li><a href="reservations.html"  class="nav-link nav-cta">Reserve a Table</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  
+
+  <header class="page-header">
+    <div class="container page-header-inner">
+      <span class="section-label">Join Us for Dinner</span>
+      <h1 class="page-header-title">Make a Reservation</h1>
+      <p class="page-header-sub">Reserve your spot for evening dining — Thu &amp; Fri, 5 PM – 9 PM.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section reservations-section">
+      <div class="container">
+        <div class="reservations-layout">
+          <!-- Info -->
+          <div class="reservation-info fade-up">
+            <span class="section-label">Before You Book</span>
+            <h2 class="section-title">Evening Dining<br>at Tamworth Bakery</h2>
+            <p class="section-subtitle">
+              Thursday and Friday evenings we transform into a warm dining destination. Enjoy dinner, seasonal cocktails, local beer and wine, and live music on select nights.
+            </p>
+            <div class="res-policy">
+              
+              <div class="res-policy-item">
+                <span class="res-policy-icon">🕔</span>
+                <div>
+                  <strong style="color:var(--color-primary);display:block;margin-bottom:2px">Evening Hours</strong>
+                  Thursday &amp; Friday, 5:00 PM – 9:00 PM. Reservations recommended; walk-ins welcome based on availability.
+                </div>
+              </div>
+              
+              <div class="res-policy-item">
+                <span class="res-policy-icon">👥</span>
+                <div>
+                  <strong style="color:var(--color-primary);display:block;margin-bottom:2px">Group Size</strong>
+                  We welcome parties of 1–12. For groups larger than 12, please call us directly at (603) 323-8872.
+                </div>
+              </div>
+              
+              <div class="res-policy-item">
+                <span class="res-policy-icon">⚠️</span>
+                <div>
+                  <strong style="color:var(--color-primary);display:block;margin-bottom:2px">Cancellation Policy</strong>
+                  Please notify us at least 2 hours before your reservation if you need to cancel or modify. No charge for cancellations.
+                </div>
+              </div>
+              
+              <div class="res-policy-item">
+                <span class="res-policy-icon">🍽️</span>
+                <div>
+                  <strong style="color:var(--color-primary);display:block;margin-bottom:2px">Daytime Walk-Ins</strong>
+                  For daytime service (Tue–Sat 8–2, Sun 10–2), no reservation is needed — just come on in!
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div class="fade-up delay-2">
+            <form id="reservationForm" novalidate>
+              <input type="text" name="_honey" style="display:none !important; visibility:hidden; position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <h3 class="form-title">Reserve Your Table</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="resFirst">First Name *</label>
+                  <input type="text" id="resFirst" name="first" required placeholder="Jane" />
+                </div>
+                <div class="form-group">
+                  <label for="resLast">Last Name *</label>
+                  <input type="text" id="resLast" name="last" required placeholder="Smith" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="resEmail">Email Address *</label>
+                <input type="email" id="resEmail" name="email" required placeholder="jane@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="resPhone">Phone Number</label>
+                <input type="tel" id="resPhone" name="phone" placeholder="(603) 555-0123" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="resDate">Date *</label>
+                  <input type="date" id="resDate" name="date" required />
+                </div>
+                <div class="form-group">
+                  <label for="resTime">Time *</label>
+                  <select id="resTime" name="time" required>
+                    <option value="" disabled selected>Select a time</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="17:00">5:00 PM</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="17:30">5:30 PM</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="18:00">6:00 PM</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="18:30">6:30 PM</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="19:00">7:00 PM</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="19:30">7:30 PM</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="20:00">8:00 PM</option>
+                    
+                    
+                    
+                    
+                    
+                    <option value="20:30">8:30 PM</option>
+                    
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="resGuests">Number of Guests *</label>
+                <select id="resGuests" name="guests" required>
+                  <option value="" disabled selected>Select party size</option>
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                  <option value="7-8">7–8 guests</option>
+                  <option value="9-12">9–12 guests</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="resNotes">Special Requests or Notes</label>
+                <textarea id="resNotes" name="notes" placeholder="Dietary restrictions, accessibility needs, celebrations…"></textarea>
+              </div>
+              <button type="submit" class="btn form-submit">Request Reservation</button>
+              <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:12px;text-align:center">
+                We'll confirm your reservation by email within a few hours.
+              </p>
+            </form>
+            <div class="form-success" id="resSuccess">
+              <div class="form-success-icon">🎉</div>
+              <h3 class="form-success-title">Reservation Request Sent!</h3>
+              <p class="form-success-text">Thank you! We'll confirm your table by email soon. We look forward to seeing you at Tamworth Bakery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta-banner">
+    <div class="container cta-banner-inner">
+      <span class="section-label">Questions?</span>
+      <h2 class="cta-banner-title">Need Help Booking?</h2>
+      <p class="cta-banner-sub">Call us directly at 22222222222 or send us a message.</p>
+      <div class="cta-actions">
+        <a href="tel:" class="btn btn-primary">Call Us</a>
+        <a href="contact.html"    class="btn btn-light">Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Override reservation form to POST to API
+    (function() {
+      var form = document.getElementById('reservationForm');
+      var success = document.getElementById('resSuccess');
+      if (!form) return;
+      var dateInput = form.querySelector('#resDate');
+      if (dateInput) {
+        dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+      }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var btn = form.querySelector('.form-submit');
+        var orig = btn.textContent;
+        btn.textContent = 'Sending\u2026';
+        btn.disabled = true;
+        var data = new FormData(form);
+        fetch('/api/tamworth-bakery/reservation', {
+          method: 'POST',
+          body: data
+        }).then(function(r) { return r.json(); })
+          .then(function(json) {
+            if (json.ok) {
+              form.style.display = 'none';
+              if (success) success.classList.add('visible');
+            } else {
+              btn.textContent = orig;
+              btn.disabled = false;
+              alert(json.error || 'Something went wrong. Please try again.');
+            }
+          }).catch(function() {
+            btn.textContent = orig;
+            btn.disabled = false;
+            alert('Unable to send request. Please try again or call us directly.');
+          });
+      }, true);
+    })();
+  </script>
+
+
+
+    <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Tamworth<span>.</span></div>
+          <p class="footer-tagline"> cozy bakery and café on Main Street, serving the Tamworth community with fresh baked goods, espresso, and warm hospitality.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="index.html"       class="footer-link">Home</a></li>
+            <li><a href="menus.html"       class="footer-link">Menus</a></li>
+            <li><a href="reservations.html" class="footer-link">Reservations</a></li>
+            <li><a href="about.html"       class="footer-link">About Us</a></li>
+            <li><a href="contact.html"     class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Hours</p>
+          <ul class="footer-hours-list">
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Tuesday – Saturday</span>
+              <span class="footer-hours-time">8:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Sunday</span>
+              <span class="footer-hours-time">10:00 AM – 2:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Thursday &amp; Friday</span>
+              <span class="footer-hours-time">5:00 PM – 9:00 PM</span>
+            </li>
+            
+            <li class="footer-hours-item">
+              <span class="footer-hours-day">Monday</span>
+              <span class="footer-hours-time">Closed</span>
+            </li>
+            
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="tel:" class="footer-link">22222222222</a></li>
+            <li><a href="mailto:info@tamworthbakery.us" class="footer-link">info@tamworthbakery.us</a></li>
+            <li><span class="footer-link" style="cursor:default">77 Main Street</span></li>
+            <li><span class="footer-link" style="cursor:default">Tamworth, NH 03886</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2024 Tamworth Bakery. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
